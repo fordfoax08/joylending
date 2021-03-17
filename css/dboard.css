@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 1fr 20fr;
+}
+
+body > div{
+    border: 1px solid red;
+    height: 100vh;
+}
+
+.l-panel-container{
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 70px;
+    background-color: #08444e;
+    transition: .5s all ease-in-out;
+
+    box-shadow: 2px -1px 5px 1px rgba(0,0,0,0.91);
+    -webkit-box-shadow: 2px -1px 5px 1px rgba(0,0,0,0.51);
+    -moz-box-shadow: 2px -1px 5px 1px rgba(0,0,0,0.51);
+
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.l-panel-container.on{
+    width: 200px;
+    transition: .5s all ease-in-out;
+    box-shadow: 1px -1px 5px 1px rgba(0,0,0,0.51);
+    -webkit-box-shadow: 1px -1px 5px 1px rgba(0,0,0,0.51);
+    -moz-box-shadow: 1px -1px 5px 1px rgba(0,0,0,0.51);
+}
+
+.comp-logo{
+    position: absolute;
+    width: 60px;
+    left: 50%;
+    margin-top: 10px;
+    cursor: pointer;
+    transform: translateX(-50%);
+    transition: .5s all ease-in-out;
+}
+
+.l-panel-container.on .comp-logo{
+    width: 120px;
+    transition: .7s all ease-in-out;
+}
+
+
+
+/* Main container */
+.main-container{
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+header{
+    text-align: center;
+}
+header > h2{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration-line:underline;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+}
+header > h6{
+    margin-bottom: 20px;
+}
+
+
+/* Menu */
+/* .menu1{
+    border: 1px solid red;
+} */
+#monthId{
+    margin: 5px;
+    padding: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.month-name{
+    text-align: center;
+}
+
+.table-container-1{
+
+
+}
+
+.table1{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1px;
+    border-color: green;
+}
+
+.thead1{
+    background-color: rgba(26, 85, 124, 0.801);
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+}
+.table1 thead tr th{
+    width: 2.3%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: small;
+}
+
+.table1 thead tr th:nth-child(1){
+    width: 20%;
+    font-size: medium;
+}
+
+.tbody1 tr td{
+    text-align: center;
+    padding: 5px;
+}
+.tbody1 tr td:nth-child(1){
+    text-align: left;
+}
+.tbody1 tr:nth-of-type(odd){
+    background-color: rgba(107, 142, 151, 0.26);
+}
+
+
+.tbody1 tr td:nth-child(1) a{
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(150, 48, 48);
+}
+
+.tbody1 tr:hover{
+    background-color: rgba(0, 0, 0, 0.288);
+}
