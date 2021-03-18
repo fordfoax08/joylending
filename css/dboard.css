@@ -94,6 +94,7 @@ header > h6{
 }
 
 /* Ico Help */
+
 .ico-help{
     color: gray;
     margin-right: 10px;
@@ -108,6 +109,50 @@ header > h6{
     color: rgb(212, 99, 58);
     transition: .3s all ease-in-out;
 }
+
+/* Help section */
+.help-container{
+    position: relative;
+    overflow: hidden;
+    height: 0;
+}
+.help-container.open{
+    height: auto;
+}
+.help-color{
+    padding: 5px;
+}
+
+
+
+.table-color{
+    border-collapse: collapse;
+}
+.table-color, .table-color > thead,.table-color > tbody,.table-color > tbody > tr,.table-color > tbody > tr > td{
+    border: 1px solid gray;
+}
+.table-color tbody tr td div{
+    border: 1px solid rgb(114, 114, 114);
+    height: 20px;
+    width: 20px;
+    margin: 3px;
+    border-radius: 50%;
+}
+.table-color tbody tr:nth-child(1) td div:nth-child(1){
+    background-color: rgb(93, 187, 93);
+}
+.table-color tbody tr:nth-child(2) td div:nth-child(1){
+    background-color:rgb(250, 158, 158);
+}
+.table-color tbody tr:nth-child(3) td div:nth-child(1){
+    background-color: rgb(243, 72, 72);
+}
+
+.table-color tbody tr td{
+    padding: 5px;
+}
+
+
 
 .month-name{
     text-align: center;
@@ -153,6 +198,7 @@ header > h6{
     text-align: center;
     padding: 5px;
     position: relative;
+    overflow: hidden;
 }
 .tbody1 tr td:nth-child(1){
     text-align: left;
@@ -167,7 +213,19 @@ header > h6{
     color: rgb(150, 48, 48);
 }
 
-.tbody1 tr td input{
+/* .tbody1 tr td input[type="text"]{
+    position: absolute;
+    left: 0;
+    top: 0;    
+    font-size: 10px;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    opacity: 7;
+    background-color: transparent;
+} */
+.tbody1 tr td input[type="checkbox"]{
     cursor: pointer;
     opacity: 0;
 }
@@ -180,14 +238,31 @@ header > h6{
     position: absolute;
     font-size: 10px;
     font-weight: bold;
+    /* top: 0; */
     left: 50%;
     transform: translateX(-50%);
     color: rgb(88, 88, 88);
+    visibility: hidden;
 }
+.tbody1 tr td p.show{
+    visibility: visible;
+}
+
+/* anim view ammt */
+.tbody1 tr td:hover > p{
+    visibility: visible;
+}
+
+.td-date-now{
+    border-left: 1px solid rgb(241, 67, 67);
+    border-right: 1px solid rgb(241, 67, 67);
+    
+}
+
 
 /* Total Container */
 .total-container{
-    border: 1px solid red;
+    border: 1px solid rgb(184, 182, 182);
     padding: 10px;
     display: flex;
     flex-direction: row-reverse;
@@ -198,5 +273,20 @@ header > h6{
 .total-container > div{
     margin: 0 20px;
 }
+.total-container > div > h4{
+    font-style: italic;
+    font-size: small;
+}
+.total-container > div > h5{
+    text-align: right;
+}
+.total-container > div:nth-child(1) > h5{
+    color: rgb(56, 139, 70);
+}
+.total-container > div:nth-child(2) > h5{
+    color: rgb(139, 56, 56);
+}
+
+
 
 
