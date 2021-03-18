@@ -81,9 +81,11 @@ header > h6{
 
 
 /* Menu */
-/* .menu1{
-    border: 1px solid red;
-} */
+.menu1{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
 #monthId{
     margin: 5px;
     padding: 5px;
@@ -91,20 +93,38 @@ header > h6{
     cursor: pointer;
 }
 
+/* Ico Help */
+.ico-help{
+    color: gray;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.bi-question-square-fill{
+    width: 20px;
+    height: auto;
+}
+.bi-question-square-fill:hover{
+    box-shadow: 1px 1px 3px 0px black;
+    color: rgb(212, 99, 58);
+    transition: .3s all ease-in-out;
+}
+
 .month-name{
     text-align: center;
 }
 
 .table-container-1{
-
-
+    overflow: hidden;
+    border-radius: 5px;
 }
 
 .table1{
     width: 100%;
     border-collapse: separate;
     border-spacing: 1px;
-    border-color: green;
+    border-color: rgb(138, 138, 138);
+    background-color: #dfdfdf;
+   
 }
 
 .thead1{
@@ -125,17 +145,21 @@ header > h6{
     font-size: medium;
 }
 
+.tbody1{
+    background-color: rgb(255, 255, 255);
+}
+
 .tbody1 tr td{
     text-align: center;
     padding: 5px;
+    position: relative;
 }
 .tbody1 tr td:nth-child(1){
     text-align: left;
 }
 .tbody1 tr:nth-of-type(odd){
-    background-color: rgba(107, 142, 151, 0.26);
+    background-color: rgba(105, 105, 105, 0.26);
 }
-
 
 .tbody1 tr td:nth-child(1) a{
     text-decoration: none;
@@ -143,6 +167,36 @@ header > h6{
     color: rgb(150, 48, 48);
 }
 
+.tbody1 tr td input{
+    cursor: pointer;
+    opacity: 0;
+}
+
 .tbody1 tr:hover{
     background-color: rgba(0, 0, 0, 0.288);
 }
+
+.tbody1 tr td p{
+    position: absolute;
+    font-size: 10px;
+    font-weight: bold;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(88, 88, 88);
+}
+
+/* Total Container */
+.total-container{
+    border: 1px solid red;
+    padding: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(53, 53, 53);
+}
+
+.total-container > div{
+    margin: 0 20px;
+}
+
+
