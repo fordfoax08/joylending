@@ -28,7 +28,11 @@ tableCheckBox.forEach(e => {
             }
         }else{
             if(event.ctrlKey && event.shiftKey){
-                e.parentNode.removeAttribute("style");
+                if(confirm("Are you sure you wan't to remove?")){
+                    e.parentNode.removeAttribute("style");
+                }else{
+                    e.checked = true;
+                }
             }else{
                 e.checked = true;
             }

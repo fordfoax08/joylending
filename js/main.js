@@ -25,7 +25,7 @@ const modalBackground = document.querySelector(".modal-background");
 const modalClose = document.querySelector(".modal-close");
 modalClose.addEventListener("click", ()=>{
     toggle.closeModal();
-    setTimeout(()=> modalClose.nextElementSibling.remove(),400);
+    //setTimeout(()=> modalClose.nextElementSibling.remove(),400);
 })
 /* modalBg close */
 modalBackground.addEventListener("click",()=>{

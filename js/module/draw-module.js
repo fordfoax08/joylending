@@ -10,6 +10,7 @@ const toggle = {
         modalCon.classList.remove("open");
         setTimeout(()=> {
             modalBg.classList.remove("open")
+            setTimeout(()=> document.querySelector(".modal-body").remove() ,400);
         },400);
         
     }
