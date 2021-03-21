@@ -1,5 +1,9 @@
 import {Client} from './module/client-module.js';
 import {toggle} from './module/draw-module.js';
+import {ctx, monthChart, clientChart} from './module/chart-module.js';
+import {clientUpdate} from './module/client-update-module.js';
+
+
 
 /* display Client Profile */
 const modalContainer = document.querySelector(".modal-container");
@@ -16,6 +20,8 @@ clientTb.forEach(e => {
         /* append node to modal container */
         modalContainer.appendChild(newDiv);
         toggle.openModal();
+        clientChart();
+        clientUpdate();
     });
 });
 
@@ -28,6 +34,17 @@ modalClose.addEventListener("click", ()=>{
     //setTimeout(()=> modalClose.nextElementSibling.remove(),400);
 })
 /* modalBg close */
-modalBackground.addEventListener("click",()=>{
+modalBackground.addEventListener("click",(e)=>{
+    if(!e.target.classList.contains("modal-background")){
+        return;
+    }
     toggle.closeModal();
-})
+    //console.log(e.target)
+});
+
+
+/* init client chart module */
+/* function clientChart(){
+    import {ctx1,ctx2,ctx3,chart1,chart2,chart3} from './module/client-chart-module.js';
+    
+} */

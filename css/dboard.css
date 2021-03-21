@@ -306,7 +306,7 @@ header > h6{
     background-color: rgb(255, 255, 255);
     /* height: 200px;
     width: 200px; */
-    padding: 30px;
+    padding: 20px;
     position: fixed;
     top: -50%;
     left: 50%;
@@ -336,4 +336,217 @@ header > h6{
 .modal-close:hover{
     box-shadow: 1px 1px 3px 0px black;
 }
+.modal-body{
+    border-radius: 5px;
+}
+
+/* ******************CLIENT INFORMATION */
+.client-info-container{
+    border: 1px solid rgb(189, 189, 189);
+    height: 500px;
+    width: 900px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    background-image: linear-gradient(rgb(228, 228, 228),white);
+}
+
+
+.info-profile-details{
+    display: flex;
+}
+
+.info1{
+    display: flex;
+    flex-direction: column;
+}
+.info1 div:nth-child(1){
+    height: 70%;
+    overflow: hidden;
+}
+.profile-pic{
+    position: relative;
+}
+.profile-pic img{
+    padding: 5px;
+    width: 150px;
+    height: auto;
+}
+.profile-name{
+    padding: 5px;
+}
+/* Profile name */
+.profile-name h2{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2em;
+    color:rgb(150, 48, 48);
+}
+
+/* Credit details */
+.info-credit-details{
+    /* border: 1px solid black; */
+    position: relative;
+}
+.credit-table{
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+.credit-table, .credit-table tr, .credit-table tr td{
+    border: 1px solid gray;
+}
+.credit-table tr td:nth-child(1){
+    width: 40%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #cecece;
+    font-weight: bold;
+    padding: 5px;
+}
+.credit-table tr td:nth-child(2){
+    text-align: left;
+    /* padding-left: 30px; */
+}
+#loanAmmount{
+    color: green;
+    font-weight: bold;
+    font-size: 1.8em;
+}
+#loanDaily{
+    color: rgb(241, 83, 83);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+#loanRemain{
+    color: rgb(187, 3, 3);
+    font-weight: bold;
+    font-size: 1.7em;
+}
+#totalReceived{
+    color:rgb(56, 139, 70);
+    font-weight: bold;
+    font-size: 1.7em;
+}
+#totalReceivable{
+    color: rgb(0, 156, 228);
+    font-weight: bold;
+    font-size: 2em;
+}
+.client-peso-sign{
+    margin-right: 15px;
+    margin-left: 5px;
+    color: rgb(78, 78, 78);
+}
+
+
+/* btn update */
+.update-client-credit{
+    padding: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+
+.info1 div:nth-child(2){
+    height: 100%;
+}
+
+
+.info2{
+    display: grid;
+    grid-template-columns: auto;
+    border-left: 1px solid rgb(173, 173, 173);
+}
+.info2 > div{
+    border-top: 1px solid rgb(202, 202, 202);
+}
+
+
+/* +++++++++++MODAL UPDATE client credit */
+
+.credit-info{
+    border: 1px solid rgb(184, 184, 184);
+    height: 500px;
+    width: 900px;
+    background-image: linear-gradient(rgb(228, 228, 228),white);
+    overflow: hidden;
+}
+.credit-info h2, .credit-info h5, .credit-info p{
+    text-align: center;
+}
+.credit-info h2{
+    color:rgb(150, 48, 48);
+}
+
+.credit-info > p span{
+    color: red;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.credit-update-table, .credit-table2 thead tr{
+    border: 1px solid gray;
+}
+.credit-table2{
+    width: 100%;
+}
+/* .credit-table2 thead{
+    background-color: rgb(134, 134, 134);
+} */
+.credit-table2 thead tr, .credit-table2 tbody tr, .credit-table2 tbody tr td{
+    border: 1px solid rgb(173, 173, 173);
+}
+
+.credit-table2 tbody tr td:nth-child(1),
+.credit-table2 tbody tr td:nth-child(2){
+    text-align: center;
+}
+.credit-table2 tbody tr td:nth-child(2) input{
+    text-align: center;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: none;
+    background-color: transparent;
+}
+
+.credit-table2 tbody tr td:nth-child(3),
+.credit-table2 tbody tr td:nth-child(4),
+.credit-table2 tbody tr td:nth-child(5){
+    width: 50px;
+    text-align: center;
+    padding: 3px;
+}
+
+
+.update-buttons{
+    /* border: 1px solid red; */
+    padding: 5px;
+    text-align: right;
+}
+.update-btn{
+    padding: 10px;
+    border: none;
+    border: 1px solid rgb(182, 182, 182);
+    border-radius: 5px;
+    background-color: rgb(116, 179, 116);
+    color: rgb(46, 46, 46);
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 0px black;
+}
+.update-btn:hover{
+    box-shadow: 2px 2px 3px 0px black;
+    color: rgb(26, 26, 26);
+}
+
+
+
+
+
+
+/* ++++++++++++++++GRAPH CONTAINER */
+.graph-container{
+    /* border: 1px solid red; */
+    padding: 10px;
+    margin-top: 20px;
+}
+
 
