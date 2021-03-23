@@ -8,10 +8,9 @@ const toggle = {
     },
     closeModal : () => {
         modalCon.classList.remove("open");
-        setTimeout(()=> {
-            modalBg.classList.remove("open")
-            setTimeout(()=> document.querySelector(".modal-body").remove() ,400);
-        },400);
+        document.querySelector(".modal-body").remove()
+        modalBg.classList.remove("open")
+        
         
     }
 }

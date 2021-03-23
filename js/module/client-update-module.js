@@ -1,4 +1,5 @@
-function clientUpdate(){
+//accept User ID
+function clientUpdate(client,chart){
     const modalBody = document.querySelector('.modal-body');
     const clientUpdateBtn = document.querySelector('.update-client-credit');
     clientUpdateBtn.addEventListener("click",()=>{
@@ -6,7 +7,19 @@ function clientUpdate(){
         /* create new div */
         let creditInf = document.createElement('DIV');
         creditInf.setAttribute("class","credit-info");
-        creditInf.innerHTML = `
+        creditInf.innerHTML = clientData();
+        modalBody.appendChild(creditInf);
+        /* when back btn is clicked, user info will be updated
+        chart here is passed as parameter
+        */
+        backBtnUpdate(client,chart);
+        /* UPDATE CHECKBOXES */
+    })
+}
+
+function clientData(){
+    const data = `
+            <button class="credit-info-back">&lt; Back</button>
             <h2>Juan Dela Cruz</h2>
             <h5>B1 lot 1 ph1 kasiglahan village</h5>
             <p>Daily:<span> 1800</span></p>
@@ -45,11 +58,24 @@ function clientUpdate(){
             </div>
             <!-- end of update buttons -->
         `;
-        modalBody.appendChild(creditInf);
+        return data;
+}
 
-        /* UPDATE CHECKBOXES */
+
+/* Back button in Update section */
+function backBtnUpdate(data,chart){
+    const backBtn = document.querySelector(".credit-info-back");
+    backBtn.addEventListener("click", ()=>{
+        //console.log(data.profile());
+        const modalBody = document.querySelector('.modal-body');
+        modalBody.innerHTML = "";
+        modalBody.innerHTML = data.profile();
+        /* chart parameter invoked from main.js from module */
+        chart();
+        /* enable update button by calling clientData 
+        note data will refresh if modal is closed*/
+        clientUpdate(data,chart);
     })
-
 }
 
 export {clientUpdate};

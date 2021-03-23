@@ -10,20 +10,27 @@ const modalContainer = document.querySelector(".modal-container");
 const clientTb = document.querySelectorAll(".tb-client-name");
 clientTb.forEach(e => {
     e.addEventListener("click", ()=>{
-        const client = new Client("1124","Eren Ackerman");
-        /* create modal body */
-        let newDiv = document.createElement("DIV");
-        /* add class to created modal body */
-        newDiv.setAttribute("class","modal-body");
-        /* insert data to created modal body */
-        newDiv.innerHTML = client.profile();
-        /* append node to modal container */
-        modalContainer.appendChild(newDiv);
-        toggle.openModal();
-        clientChart();
-        clientUpdate();
+        /* display user */
+        userInfoDisplay();
     });
 });
+
+/* User Info display */
+function userInfoDisplay(id=123,name="Kassy Vi"){
+    const client = new Client(id,name);
+    /* create modal body */
+    let newDiv = document.createElement("DIV");
+    /* add class to created modal body */
+    newDiv.setAttribute("class","modal-body");
+    /* insert data to created modal body */
+    newDiv.innerHTML = client.profile();
+    /* append node to modal container */
+    modalContainer.appendChild(newDiv);
+    toggle.openModal();
+    clientChart();
+    clientUpdate(client,clientChart);
+}
+
 
 
 /* CLOSE MODAL */
@@ -31,7 +38,6 @@ const modalBackground = document.querySelector(".modal-background");
 const modalClose = document.querySelector(".modal-close");
 modalClose.addEventListener("click", ()=>{
     toggle.closeModal();
-    //setTimeout(()=> modalClose.nextElementSibling.remove(),400);
 })
 /* modalBg close */
 modalBackground.addEventListener("click",(e)=>{
@@ -42,9 +48,3 @@ modalBackground.addEventListener("click",(e)=>{
     //console.log(e.target)
 });
 
-
-/* init client chart module */
-/* function clientChart(){
-    import {ctx1,ctx2,ctx3,chart1,chart2,chart3} from './module/client-chart-module.js';
-    
-} */

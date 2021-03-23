@@ -26,6 +26,7 @@ var monthChart = new Chart(ctx, {
         }]
     },
     options: {
+        maintainAspectRatio: false,
         scales: {
             yAxes: [{
                 ticks: {

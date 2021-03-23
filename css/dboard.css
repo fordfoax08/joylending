@@ -12,7 +12,7 @@ body{
 }
 
 body > div{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 100vh;
 }
 
@@ -31,8 +31,6 @@ body > div{
 
     display: flex;
     flex-direction: column;
-    
-    
 }
 
 .l-panel-container.on{
@@ -56,6 +54,74 @@ body > div{
 .l-panel-container.on .comp-logo{
     width: 120px;
     transition: .7s all ease-in-out;
+}
+
+.panel-dashboard,
+.panel-cliententry,
+.panel-addclient,
+.panel-logout{
+    /* border: 1px solid red; */
+    background-color: #ffffff0c;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 5px;
+    color: white;
+    transition: .4s all ease-in-out;
+    cursor: pointer;
+}
+.panel-dashboard{
+    margin-top: 150px;
+}
+.panel-logout{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.selected{
+    background-color: #ffffff2f;
+}
+.panel-dashboard img,
+.panel-cliententry img,
+.panel-addclient img,
+.panel-logout img{
+    width: 30px;
+}
+.panel-dashboard p,
+.panel-cliententry p,
+.panel-addclient p,
+.panel-logout p{
+    display: none;
+    margin: 5px;
+}
+.panel-dashboard:hover,
+.panel-cliententry:hover,
+.panel-addclient:hover,
+.panel-logout:hover{
+    background-color: #e9e9e952;
+    transition: .4s all ease-in-out;
+}
+
+.l-panel-container.on .panel-dashboard,
+.l-panel-container.on .panel-cliententry,
+.l-panel-container.on .panel-addclient,
+.l-panel-container.on .panel-logout{
+    justify-content: left;
+    padding-left: 30px;
+}
+
+.l-panel-container.on .panel-dashboard img,
+.l-panel-container.on .panel-cliententry img,
+.l-panel-container.on .panel-addclient img,
+.l-panel-container.on .panel-logout img{
+    width: 20px;
+}
+.l-panel-container.on .panel-dashboard p,
+.l-panel-container.on .panel-cliententry p,
+.l-panel-container.on .panel-addclient p,
+.l-panel-container.on .panel-logout p{
+    display: block;
 }
 
 
@@ -289,6 +355,8 @@ header > h6{
 
 
 
+
+
 /* ++++++++++++ MODAL SECTION +++++++++++ */
 .modal-background{
     position: fixed;
@@ -296,7 +364,7 @@ header > h6{
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, .4);
+    background: rgba(0, 0, 0, 0.4);
     display: none;
 }.modal-background.open{
     display: block;
@@ -398,17 +466,18 @@ header > h6{
     width: 40%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #cecece;
-    font-weight: bold;
+    /* font-weight: lighter; */
     padding: 5px;
 }
 .credit-table tr td:nth-child(2){
     text-align: left;
     /* padding-left: 30px; */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 #loanAmmount{
     color: green;
     font-weight: bold;
-    font-size: 1.8em;
+    font-size: 1.5em;
 }
 #loanDaily{
     color: rgb(241, 83, 83);
@@ -418,17 +487,17 @@ header > h6{
 #loanRemain{
     color: rgb(187, 3, 3);
     font-weight: bold;
-    font-size: 1.7em;
+    font-size: 1.5em;
 }
 #totalReceived{
     color:rgb(56, 139, 70);
     font-weight: bold;
-    font-size: 1.7em;
+    font-size: 1.5em;
 }
 #totalReceivable{
     color: rgb(0, 156, 228);
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1.7em;
 }
 .client-peso-sign{
     margin-right: 15px;
@@ -470,6 +539,19 @@ header > h6{
     width: 900px;
     background-image: linear-gradient(rgb(228, 228, 228),white);
     overflow: hidden;
+}
+.credit-info-back{
+    border: none;
+    background-color: rgb(134, 132, 132);
+    background-image: linear-gradient(gray, white);
+    border-radius: 5px;
+    padding: 3px;
+    color: rgb(87, 86, 86);
+    cursor: pointer;
+}
+.credit-info-back:hover{
+    box-shadow: 1px 1px 1px 0px black;
+    color: rgb(0, 0, 0);
 }
 .credit-info h2, .credit-info h5, .credit-info p{
     text-align: center;
@@ -547,6 +629,9 @@ header > h6{
     /* border: 1px solid red; */
     padding: 10px;
     margin-top: 20px;
+}
+.graph-container canvas{
+    height: 300px;
 }
 
 

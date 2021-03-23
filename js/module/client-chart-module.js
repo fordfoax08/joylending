@@ -1,4 +1,5 @@
-function clientChart{const ctx1 = document.getElementById('chart1').getContext('2d');
+function clientChart(){
+const ctx1 = document.getElementById('chart1').getContext('2d');
 const chart1 = new Chart(ctx1, {
     type: 'bar',
     data: {
