@@ -1,8 +1,12 @@
 import {Client} from './module/client-module.js';
 import {toggle} from './module/draw-module.js';
-import {ctx, monthChart, clientChart} from './module/chart-module.js';
+import {ctx, monthChart, clientChart, graph2} from './module/chart-module.js';
 import {clientUpdate} from './module/client-update-module.js';
 
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    graph2();
+});
 
 
 /* display Client Profile */

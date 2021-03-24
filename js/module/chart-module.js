@@ -157,4 +157,33 @@ function clientChart(){
         }
     });
 }
-export {ctx, monthChart, clientChart};
+
+
+
+/* Section Graph */
+function graph2(){
+    const graph2ctx = document.querySelector('#monthCollect').getContext('2d');
+    const myDoughnut = new Chart(graph2ctx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                data: [38, 20, 10],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(237, 0, 12, 0.5)'
+                ]
+            }],
+        
+            // These labels appear in the legend and in the tooltips when hovering different arcs
+            labels: [
+                'Regular Pay',
+                'Partial Pay',
+                'Late Payment'
+            ]
+        }
+        /* ,
+        options: options */
+    });
+}
+export {ctx, monthChart, clientChart, graph2};
