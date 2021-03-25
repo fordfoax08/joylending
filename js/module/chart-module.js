@@ -181,9 +181,96 @@ function graph2(){
                 'Partial Pay',
                 'Late Payment'
             ]
-        }
+        },
         /* ,
         options: options */
+        option: {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Chart.js Line Chart'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+            }
+        }
     });
 }
-export {ctx, monthChart, clientChart, graph2};
+
+
+/* Graph 3 */
+function graph3(){
+    var config = {
+        type: 'line',
+        data: {
+            labels: ['February', 'March', 'April', 'May'],
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 0.5)'
+                ],
+                data: [70,25,80],
+                fill: true,
+            }, {
+                label: 'My Second dataset',
+                fill: true,
+                backgroundColor: [
+                    'rgb(153, 102, 255)'
+                ],
+                borderColor: [
+                    'rgb(153, 102, 255)'
+                ],
+                data: [45,80,60],
+            }]
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Chart.js Line Chart'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Month'
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Value'
+                    },
+                    ticks: {
+                        min: 0,
+                        max: 100,
+
+                        // forces step size to be 5 units
+                        stepSize: 5
+                    }
+                }]
+            }
+        }
+    };
+
+    const monthCanvas = document.getElementById("monthCompare").getContext("2d");
+    const myGraph3 = new Chart(monthCanvas, config);
+}
+
+
+
+export {ctx, monthChart, clientChart, graph2, graph3};
