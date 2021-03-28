@@ -1,12 +1,13 @@
-import {Client} from './module/client-module.js';
+import {Client,ClientDisplay,enableCheck} from './module/modules-client.js';
 import {toggle} from './module/draw-module.js';
-import {ctx, monthChart, clientChart, graph2, graph3} from './module/chart-module.js';
-import {clientUpdate} from './module/client-update-module.js';
+import {clientChart, graph2, graph3} from './module/chart-module.js';
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
     graph2();
     graph3();
+    /* enable checkbox to edit manually */
+    enableCheck();
 });
 
 
@@ -15,13 +16,16 @@ const modalContainer = document.querySelector(".modal-container");
 const clientTb = document.querySelectorAll(".tb-client-name");
 clientTb.forEach(e => {
     e.addEventListener("click", ()=>{
-        /* display user */
+        /* display user 
+         userInfoDisplay shoud accept arguments id and name(atleast)
+        */
         userInfoDisplay();
     });
 });
 
 /* User Info display */
 function userInfoDisplay(id=123,name="Kassy Vi"){
+    const clientDisplay = new ClientDisplay;
     const client = new Client(id,name);
     /* create modal body */
     let newDiv = document.createElement("DIV");
@@ -33,7 +37,8 @@ function userInfoDisplay(id=123,name="Kassy Vi"){
     modalContainer.appendChild(newDiv);
     toggle.openModal();
     clientChart();
-    clientUpdate(client,clientChart);
+    /* Client update modal display */
+    clientDisplay.clientUpdate(client,clientChart);
 }
 
 

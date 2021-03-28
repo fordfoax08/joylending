@@ -1,22 +1,42 @@
+
+
+class ClientDisplay{
+    /* Client display update when button UPDATE is clicked in modal user info display */
+    clientUpdate(client,chart){
+        const modalBody = document.querySelector('.modal-body');
+        const clientUpdateBtn = document.querySelector('.update-client-credit');
+        clientUpdateBtn.addEventListener("click",()=>{
+            modalBody.innerHTML = "";
+            /* create new div */
+            let creditInf = document.createElement('DIV');
+            creditInf.setAttribute("class","credit-info");
+            creditInf.innerHTML = clientData();
+            modalBody.appendChild(creditInf);
+            /* when back btn is clicked, user info will be updated
+            chart here is passed as parameter
+            */
+            backBtnUpdate(client,chart);
+            /* UPDATE CHECKBOXES */
+        });
+    }
+}
+
+
 //accept User ID
-function clientUpdate(client,chart){
+/* function clientUpdate(client,chart){
     const modalBody = document.querySelector('.modal-body');
     const clientUpdateBtn = document.querySelector('.update-client-credit');
     clientUpdateBtn.addEventListener("click",()=>{
         modalBody.innerHTML = "";
-        /* create new div */
         let creditInf = document.createElement('DIV');
         creditInf.setAttribute("class","credit-info");
         creditInf.innerHTML = clientData();
         modalBody.appendChild(creditInf);
-        /* when back btn is clicked, user info will be updated
-        chart here is passed as parameter
-        */
         backBtnUpdate(client,chart);
-        /* UPDATE CHECKBOXES */
-    })
-}
+    });
+} */
 
+/* template for Client Data */
 function clientData(){
     const data = `
             <button class="credit-info-back">&lt; Back</button>
@@ -78,4 +98,4 @@ function backBtnUpdate(data,chart){
     })
 }
 
-export {clientUpdate};
+export {ClientDisplay};
