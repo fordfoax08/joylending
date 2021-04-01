@@ -42,9 +42,9 @@ function modalData(){
                     <tr>
                         <td>4-1-2021</td>
                         <td><input type="text" name="text1" value="2019" id="updateData"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox" checked></td>
-                        <td><input type="checkbox"></td>
+                        <td class="reg-update-check"><input type="checkbox"></td>
+                        <td class="part-update-check part"><input type="checkbox" checked></td>
+                        <td class="late-update-check"><input type="checkbox"></td>
                     </tr>
                 </tbody>
             </table>
