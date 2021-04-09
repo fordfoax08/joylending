@@ -1,15 +1,19 @@
 /* Left Panel Drawer ANim */
 const lpanel = document.querySelector('.l-panel-container');
-const logoBtn = document.querySelector(".comp-logo");
-logoBtn.addEventListener("click", drawPanel);
 
-function drawPanel(e){
-    if(lpanel.classList.contains("on")){
-        lpanel.classList.remove("on");
-    }else{
+
+/* Draw L panel when hover */
+const lPanelItems = document.querySelectorAll(".l-panel-container > div");
+lPanelItems.forEach(e => {
+    e.addEventListener("mouseenter", ()=>{
         lpanel.classList.add("on");
-    }
-}
+    });
+});
+lPanelItems.forEach(e => {
+    e.addEventListener("mouseleave", ()=>{
+        lpanel.classList.remove("on");
+    })
+});
 
 
 /* Table Checkbox anim */
@@ -67,4 +71,13 @@ icoHelp.addEventListener("click",() => {
     }
 })
 
-
+/* FOR RIGHT PANEL ANIMATION */
+const notifyBtn = document.querySelector(".notify");
+const rPanel = document.querySelector(".r-panel-container");
+notifyBtn.addEventListener("click",()=>{
+    if(rPanel.classList.contains("open")){
+        rPanel.classList.remove("open");
+    }else{
+        rPanel.classList.add("open");
+    }
+});

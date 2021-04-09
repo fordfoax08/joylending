@@ -66,6 +66,10 @@ body > div{
     width: 120px;
     transition: .7s all ease-in-out;
 }
+.l-panel-container div p{
+    /* word-wrap: break-word; */
+    white-space: nowrap;
+}
 
 .panel-dashboard,
 .panel-cliententry,
@@ -104,7 +108,11 @@ body > div{
 .panel-addclient p,
 .panel-logout p{
     display: none;
+    font-size: .8em;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: .3px;
     margin: 5px;
+    color: rgb(231, 231, 231);
 }
 .panel-dashboard:hover,
 .panel-cliententry:hover,
@@ -122,12 +130,12 @@ body > div{
     padding-left: 30px;
 }
 
-.l-panel-container.on .panel-dashboard img,
+/* .l-panel-container.on .panel-dashboard img,
 .l-panel-container.on .panel-cliententry img,
 .l-panel-container.on .panel-addclient img,
 .l-panel-container.on .panel-logout img{
     width: 20px;
-}
+} */
 .l-panel-container.on .panel-dashboard p,
 .l-panel-container.on .panel-cliententry p,
 .l-panel-container.on .panel-addclient p,
@@ -139,7 +147,7 @@ body > div{
 /* +++++++++++++++++++++++++++++++RIGHT PANEL CONTAINER */
 .r-panel-container{
     position: absolute;
-    width: 0;
+    width: 200px;
     border: 1px solid red;
     background-color: #08444e;
     top: 0;
@@ -147,7 +155,10 @@ body > div{
     right: 0;
     overflow: hidden;
     z-index: 2;
-    transition: .4s all ease-in-out;
+    display: none;
+}
+.r-panel-container.open{
+    display: block;
 }
 /* .r-panel-container.open{
     transition: .4s all ease-in-out;
